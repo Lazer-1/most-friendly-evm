@@ -1,12 +1,10 @@
-#![allow(dead_code)]
-
 use ethnum::U256;
 
 /// A general purpose stack of 256-bit values.
 /// Stack is an object for basic stack operations. Items popped to the stack are
 /// expected to be changed and modified. Stack does not take care of adding
 /// newly initialised objects.
-struct Stack {
+pub struct Stack {
     data: Vec<U256>,
 }
 
@@ -31,6 +29,7 @@ impl Stack {
     }
 
     /// Get the number of elements in the stack
+    #[allow(clippy::len_without_is_empty)]
     pub fn len(&self) -> usize {
         self.data.len()
     }
@@ -64,6 +63,12 @@ impl Stack {
     pub fn back(&self, n: usize) -> Option<&U256> {
         let len = self.len();
         self.data.get(len - n - 1)
+    }
+}
+
+impl Default for Stack {
+    fn default() -> Self {
+        Self::new()
     }
 }
 

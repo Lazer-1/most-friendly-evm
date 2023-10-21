@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 ethnum = { version = "1.4.0", features = ["macros"] }
+thiserror = "1.0.50"
