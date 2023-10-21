@@ -3,5 +3,23 @@
 version = 3
 
 [[package]]
+name = "ethnum"
+version = "1.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c8ff382b2fa527fb7fb06eeebfc5bbb3f17e3cc6b9d70b006c41daa8824adac"
+dependencies = [
+ "ethnum-macros",
+]
+
+[[package]]
+name = "ethnum-macros"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ba69ba11ab069d2f946bb46a199630ad6680fa3ecdc87a62c7477f9916095841"
+
+[[package]]
 name = "most-friendly-evm"
 version = "0.1.0"
+dependencies = [
+ "ethnum",
+]
