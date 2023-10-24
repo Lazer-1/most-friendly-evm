@@ -1,10 +1,21 @@
 use ethnum::U256;
 
-/// A general purpose stack of 256-bit values.
+/// A general purpose stack of 256-bit words. This was chosen because it is
+/// convenient for Ethereum's core cryptographic operations such as Keccak-256
+/// hashing and elliptic curve computations.
+///
 /// Stack is an object for basic stack operations. Items popped to the stack are
 /// expected to be changed and modified. Stack does not take care of adding
 /// newly initialised objects.
+///
+/// The max number of items the stack can have is 1024. If you try to push more
+/// items than this, then execution will have to crash due to a stack overflow.
+///
+/// If you attempt to run an opcode that requires more parameters that currently
+/// in the stack (e.g. running ADD with a stack size of zero or one), then
+/// execution will have to crash due to a stack underflow.
 pub struct Stack {
+    /// The stack data. The element at the back of the vector is the topmost
     data: Vec<U256>,
 }
 
@@ -19,6 +30,7 @@ impl Stack {
     }
 
     /// Push a value onto the stack
+    /// TODO: The maximum size of the stack is 1024 bytes
     pub fn push(&mut self, value: U256) {
         self.data.push(value);
     }
