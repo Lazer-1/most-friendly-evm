@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/Lazer-1/most-friendly-evm/graph/badge.svg?token=0W42BDLFUK)](https://codecov.io/gh/Lazer-1/most-friendly-evm)
+
 # most-friendly-evm
 
 Reimplementation of [evm in geth](https://github.com/ethereum/go-ethereum/tree/master/core/vm) in Rust with a lot of annotations and explanations to foster understanding of evm.
