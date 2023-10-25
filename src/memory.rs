@@ -26,8 +26,7 @@ impl Memory {
         if size > 0 {
             // length of store may never be less than offset + size.
             // The store should be resized PRIOR to setting the memory
-            if offset + size > value.len() {
-                panic!("invalid memory: store empty");
+            if offset + size > self.store.len() {
             }
         }
 
