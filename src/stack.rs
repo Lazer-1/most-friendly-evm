@@ -78,6 +78,7 @@ impl Stack {
     }
 }
 
+#[cfg(not(tarpaulin_include))]
 impl Default for Stack {
     fn default() -> Self {
         Self::new()

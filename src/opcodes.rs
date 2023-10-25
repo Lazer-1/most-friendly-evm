@@ -1,3 +1,5 @@
+#![cfg(not(tarpaulin_include))]
+
 use thiserror::Error;
 
 /// Abstraction over opcode. The full list of latest opcodes are available at https://github.com/ethereum/go-ethereum/blob/master/core/vm/opcodes.go.
